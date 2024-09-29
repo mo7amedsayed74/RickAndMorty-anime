@@ -97,19 +97,17 @@ class _CharactersScreenState extends State<CharactersScreen> {
       searchTextController.clear();
     });
   }
-
-  @override
-  void initState() {
-    super.initState();
-    print("characterScreen initState");
-    BlocProvider.of<CharacterCubit>(context).getAllCharacters();
-  }
+  //
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   print("characterScreen initState");
+  //   //BlocProvider.of<CharacterCubit>(context).getAllCharacters();
+  // }
 
   Widget buildBlocWidget() {
     return BlocBuilder<CharacterCubit, CharactersStates>(
       builder: (context, state) {
-        print("cheeeckkkk state");
-        print("state is $state");
         if (state is CharactersLoaded) {
           //allCharacters = state.characters;
           getAllCharacters(state);
@@ -191,7 +189,6 @@ class _CharactersScreenState extends State<CharactersScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print("characterScreen Build");
     return Scaffold(
       backgroundColor: MyColors.myGrey,
       appBar: AppBar(

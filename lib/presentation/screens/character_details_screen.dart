@@ -80,7 +80,7 @@ class CharacterDetailsScreen extends StatelessWidget {
     );
   }
 
-  Widget buildQuote(CharactersStates state){
+  Widget buildQuote(CharactersStates state,BuildContext context){
     if(state is QuotesLoaded){
       return displayQuote(state);
     }else{
@@ -148,7 +148,7 @@ class CharacterDetailsScreen extends StatelessWidget {
                           "status", selectedCharacter.statusIfDeadOrAlive),
                       const SizedBox(height: 30),
                       BlocBuilder<CharacterCubit, CharactersStates>(
-                        builder: (context, state) => buildQuote(state),
+                        builder: (context, state) => buildQuote(state,context),
                       ),
                     ],
                   ),
