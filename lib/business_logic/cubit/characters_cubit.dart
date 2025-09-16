@@ -12,7 +12,7 @@ class CharacterCubit extends Cubit<CharactersStates> {
   CharacterCubit(this.charactersRepository) : super(InitialState());
 
   void getAllCharacters() {
-    print("getAllCharacters cubit");
+    //print("getAllCharacters cubit");
     charactersRepository.getAllCharacters().then((characters) {
       this.characters = characters;
       emit(CharactersLoaded(characters));
@@ -26,7 +26,7 @@ class CharacterCubit extends Cubit<CharactersStates> {
   }
 
   void backToCharacterScreen(context){
-    print("backToCharacterScreen");
+    //print("backToCharacterScreen");
     emit(CharactersLoaded(characters)); /// very important to emit CharactersLoaded again
     Navigator.pop(context);
   }

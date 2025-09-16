@@ -1,5 +1,4 @@
 import '../../data/model/characters.dart';
-import '../../data/model/quote.dart';
 
 abstract class CharactersStates{}
 
@@ -12,7 +11,7 @@ class CharactersLoaded extends CharactersStates{
 }
 
 class QuotesLoaded extends CharactersStates{
-  final List<Quote> quotes;
+  final List<String> quotes;
 
   QuotesLoaded(this.quotes);
 }

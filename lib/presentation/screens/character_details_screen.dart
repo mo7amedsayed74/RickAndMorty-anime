@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,7 +7,6 @@ import '../../business_logic/cubit/characters_cubit.dart';
 import '../../business_logic/cubit/characters_states.dart';
 import '../../constants/my_colors.dart';
 import '../../data/model/characters.dart';
-import '../../data/model/quote.dart';
 
 class CharacterDetailsScreen extends StatelessWidget {
   final Character selectedCharacter;
@@ -89,7 +87,7 @@ class CharacterDetailsScreen extends StatelessWidget {
   }
 
   Widget displayQuote(state){
-    List<Quote> quotes = (state).quotes;
+    List<String> quotes = (state).quotes;
     int randomIndex = Random().nextInt(20);
     return Center(
       child: DefaultTextStyle(
@@ -108,7 +106,7 @@ class CharacterDetailsScreen extends StatelessWidget {
         child: AnimatedTextKit(
           repeatForever: true,
           animatedTexts: [
-            FlickerAnimatedText(quotes[randomIndex].content),
+            FlickerAnimatedText(quotes[randomIndex]),
           ],
           // onTap: () { print("Tap Event"); },
         ),

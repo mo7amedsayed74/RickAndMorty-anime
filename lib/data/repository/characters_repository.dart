@@ -1,6 +1,4 @@
-
 import '../model/characters.dart';
-import '../model/quote.dart';
 import '../web_services/characters_web_services.dart';
 
 class CharactersRepository {
@@ -13,9 +11,10 @@ class CharactersRepository {
     return characters.map((character) => Character.fromJson(character)).toList();
   }
 
-  Future<List<Quote>> getRandomQuotes() async {
+  Future<List<String>> getRandomQuotes() async {
     final quotes = await charactersWebServices.getRandomQuotes();
-    return quotes.map((quote) => Quote.fromJson(quote)).toList();
+    return List<String>.from(quotes);
+    //return quotes.map((quote) => Quote.fromJson(quote)).toList();
   }
 
 }

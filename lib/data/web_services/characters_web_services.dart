@@ -37,8 +37,8 @@ class CharactersWebServices {
 
   Future<List<dynamic>> getRandomQuotes() async {
     try{
-      Response response = await quoteDio.get('quotes');
-      return response.data['results'];
+      Response response = await quoteDio.get('trivia');
+      return response.data['trivia'];
     }catch(e){
       print(e.toString());
       return [];
